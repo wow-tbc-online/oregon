@@ -365,7 +365,7 @@ ChatCommand* ChatHandler::getCommandTable()
         { "gm_tickets",                  SEC_ADMINISTRATOR, true,  OldHandler<&ChatHandler::HandleGMTicketReloadCommand>,                "", NULL },
         { "account_referred",            SEC_ADMINISTRATOR, true,  OldHandler<&ChatHandler::HandleRAFReloadCommand>,                     "", NULL },
 
-        { "eluna",                       SEC_ADMINISTRATOR, true, OldHandler<&ChatHandler::HandleElunaReloadCommand>,                    "", NULL },
+        { "eluna",                       SEC_ADMINISTRATOR, true,   OldHandler<&ChatHandler::HandleElunaReloadCommand>,                  "", NULL },
 
         { "",                            SEC_ADMINISTRATOR, true,  OldHandler<&ChatHandler::HandleReloadCommand>,                        "", NULL },
         { NULL,                          0,                 false, NULL,                                                     "", NULL }
