@@ -26,6 +26,7 @@
 #include "Utilities/Util.h"
 #include "World.h"
 #include "GridNotifiersImpl.h"
+<<<<<<<<< Temporary merge branch 1
 #include "Formulas.h"
 #include "LuaEngine.h"
 #include "../Custom/CrossfactionBG/CrossfactionBG.h"

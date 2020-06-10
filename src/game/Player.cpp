@@ -66,6 +66,7 @@
 #include "PoolMgr.h"
 #include "LuaEngine.h"
 #include "../Custom/CrossfactionBG/CrossfactionBG.h"
+>>>>>>>>> Temporary merge branch 2
 
 #include <cmath>
 
@@ -2414,35 +2415,6 @@ void Player::SetInWater(bool apply)
     RemoveAurasWithInterruptFlags(apply ? AURA_INTERRUPT_FLAG_NOT_ABOVEWATER : AURA_INTERRUPT_FLAG_NOT_UNDERWATER);
 
     getHostileRefManager().updateThreatTables();
-}
-
-void Player::InitDisplayIds()
-{
-    PlayerInfo const* info = sObjectMgr.GetPlayerInfo(getRace(), getClass());
-    if (!info)
-    {
-        sLog.outError("Player has incorrect race/class pair. Not loaded.");
-        return;
-    }
-
-    //Reset scale
-    this->SetObjectScale(1.0f);
-
-    uint8 gender = getGender();
-    switch (gender)
-    {
-    case GENDER_FEMALE:
-        SetDisplayId(info->displayId_f);
-        SetNativeDisplayId(info->displayId_f);
-        break;
-    case GENDER_MALE:
-        SetDisplayId(info->displayId_m);
-        SetNativeDisplayId(info->displayId_m);
-        break;
-    default:
-        sLog.outError("Invalid gender %u for player", gender);
-        return;
-    }
 }
 
 bool Player::IsInAreaTriggerRadius(const AreaTriggerEntry* trigger) const
