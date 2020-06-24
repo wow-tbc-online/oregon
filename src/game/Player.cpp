@@ -16215,7 +16215,7 @@ bool Player::Satisfy(AccessRequirement const* ar, uint32 target_map, bool report
         if (ar->levelMax >= ar->levelMin && getLevel() > ar->levelMax && !sWorld.getConfig(CONFIG_INSTANCE_IGNORE_LEVEL))
             LevelMax = ar->levelMax;
 
-        uint32 missingKey = 0;
+       /* uint32 missingKey = 0;
         uint32 missingItem = 0;
         if (ar->item)
         {
@@ -16268,7 +16268,7 @@ bool Player::Satisfy(AccessRequirement const* ar, uint32 target_map, bool report
                 // @todo implement LevelMax
             }
             return false;
-        }
+        }*/
     }
     return true;
 }
