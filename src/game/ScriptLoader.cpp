@@ -23,6 +23,9 @@
 //void AddSC_custom_example();
 //void AddSC_custom_gossip_codebox();
 //void AddSC_test();
+//custom
+void AddSC_npc_exchanger();
+
 void AddModuleScripts();
 //world
 void AddSC_areatrigger_scripts();
