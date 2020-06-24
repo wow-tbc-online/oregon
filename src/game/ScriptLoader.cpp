@@ -83,23 +83,23 @@ void AddSC_deadmines();                      //Deadmines
 void AddSC_instance_deadmines();
 void AddSC_instance_gnomeregan();            //Gnomeregan
 void AddSC_gnomeregan();
-void AddSC_boss_attumen();                   //Karazhan
-void AddSC_boss_curator();
-void AddSC_boss_maiden_of_virtue();
-void AddSC_boss_shade_of_aran();
-void AddSC_boss_malchezaar();
-void AddSC_boss_terestian_illhoof();
-void AddSC_boss_moroes();
-void AddSC_boss_nightbane();
-void AddSC_boss_netherspite();
-void AddSC_bosses_opera();
+//void AddSC_boss_attumen();                   //Karazhan
+//void AddSC_boss_curator();
+//void AddSC_boss_maiden_of_virtue();
+//void AddSC_boss_shade_of_aran();
+//void AddSC_boss_malchezaar();
+//void AddSC_boss_terestian_illhoof();
+//void AddSC_boss_moroes();
+//void AddSC_boss_nightbane();
+//void AddSC_boss_netherspite();
+//void AddSC_bosses_opera();
 void AddSC_instance_karazhan();
-void AddSC_chess_event();
+//void AddSC_chess_event();
 void AddSC_karazhan();
-void AddSC_boss_felblood_kaelthas();         // Magister's Terrace
-void AddSC_boss_selin_fireheart();
-void AddSC_boss_vexallus();
-void AddSC_boss_priestess_delrissa();
+//void AddSC_boss_felblood_kaelthas();         // Magister's Terrace
+//void AddSC_boss_selin_fireheart();
+//void AddSC_boss_vexallus();
+//void AddSC_boss_priestess_delrissa();
 void AddSC_instance_magisters_terrace();
 void AddSC_magisters_terrace();
 void AddSC_boss_lucifron();                  //Molten core
@@ -170,23 +170,23 @@ void AddSC_sunken_temple();                  // Sunken Temple
 void AddSC_instance_sunken_temple();
 void AddSC_swamp_of_sorrows();               //Swamp of Sorrows
 void AddSC_instance_sunwell_plateau();       //Sunwell Plateau
-void AddSC_boss_kalecgos();
-void AddSC_boss_brutallus();
-void AddSC_boss_felmyst();
-void AddSC_boss_eredar_twins();
-void AddSC_boss_muru();
-void AddSC_boss_kiljaeden();
+//void AddSC_boss_kalecgos();
+//void AddSC_boss_brutallus();
+//void AddSC_boss_felmyst();
+//void AddSC_boss_eredar_twins();
+//void AddSC_boss_muru();
+//void AddSC_boss_kiljaeden();
 void AddSC_sunwell_plateau();
 void AddSC_boss_archaedas();                 //Uldaman
 void AddSC_boss_ironaya();
 void AddSC_uldaman();
 void AddSC_instance_uldaman();
-void AddSC_boss_akilzon();                   //Zul'Aman
-void AddSC_boss_halazzi();
-void AddSC_boss_hex_lord_malacrass();
-void AddSC_boss_janalai();
-void AddSC_boss_nalorakk();
-void AddSC_boss_zuljin();
+//void AddSC_boss_akilzon();                   //Zul'Aman
+//void AddSC_boss_halazzi();
+//void AddSC_boss_hex_lord_malacrass();
+//void AddSC_boss_janalai();
+//void AddSC_boss_nalorakk();
+//void AddSC_boss_zuljin();
 void AddSC_instance_zulaman();
 void AddSC_zulaman();
 void AddSC_boss_jeklik();                    //Zul'Gurub
@@ -305,29 +305,29 @@ void AddSC_ungoro_crater();
 void AddSC_winterspring();
 
 //outland
-void AddSC_boss_exarch_maladaar();           //Auchindoun Auchenai Crypts
-void AddSC_boss_shirrak_the_dead_watcher();
-void AddSC_boss_nexusprince_shaffar();       //Auchindoun Mana Tombs
-void AddSC_boss_pandemonius();
-void AddSC_boss_darkweaver_syth();           //Auchindoun Sekketh Halls
-void AddSC_boss_talon_king_ikiss();
-void AddSC_boss_anzu();
+//void AddSC_boss_exarch_maladaar();           //Auchindoun Auchenai Crypts
+//void AddSC_boss_shirrak_the_dead_watcher();
+//void AddSC_boss_nexusprince_shaffar();       //Auchindoun Mana Tombs
+//void AddSC_boss_pandemonius();
+//void AddSC_boss_darkweaver_syth();           //Auchindoun Sekketh Halls
+//void AddSC_boss_talon_king_ikiss();
+//void AddSC_boss_anzu();
 void AddSC_instance_sethekk_halls();
 void AddSC_instance_shadow_labyrinth();      //Auchindoun Shadow Labyrinth
-void AddSC_boss_ambassador_hellmaw();
-void AddSC_boss_blackheart_the_inciter();
-void AddSC_boss_grandmaster_vorpil();
-void AddSC_boss_murmur();
+//void AddSC_boss_ambassador_hellmaw();
+//void AddSC_boss_blackheart_the_inciter();
+//void AddSC_boss_grandmaster_vorpil();
+//void AddSC_boss_murmur();
 void AddSC_black_temple();                   //Black Temple
-void AddSC_boss_illidan();
-void AddSC_boss_shade_of_akama();
-void AddSC_boss_supremus();
-void AddSC_boss_gurtogg_bloodboil();
-void AddSC_boss_mother_shahraz();
-void AddSC_boss_reliquary_of_souls();
-void AddSC_boss_teron_gorefiend();
-void AddSC_boss_najentus();
-void AddSC_boss_illidari_council();
+//void AddSC_boss_illidan();
+//void AddSC_boss_shade_of_akama();
+//void AddSC_boss_supremus();
+//void AddSC_boss_gurtogg_bloodboil();
+//void AddSC_boss_mother_shahraz();
+//void AddSC_boss_reliquary_of_souls();
+//void AddSC_boss_teron_gorefiend();
+//void AddSC_boss_najentus();
+//void AddSC_boss_illidari_council();
 void AddSC_instance_black_temple();
 void AddSC_boss_fathomlord_karathress();     //CR Serpent Shrine Cavern
 void AddSC_boss_hydross_the_unstable();
@@ -342,15 +342,15 @@ void AddSC_boss_warlord_kalithresh();
 void AddSC_instance_steam_vault();
 void AddSC_boss_hungarfen();                 //CR Underbog
 void AddSC_boss_the_black_stalker();
-void AddSC_boss_gruul();                     //Gruul's Lair
-void AddSC_boss_high_king_maulgar();
+//void AddSC_boss_gruul();                     //Gruul's Lair
+//void AddSC_boss_high_king_maulgar();
 void AddSC_instance_gruuls_lair();
 void AddSC_boss_broggok();                   //HC Blood Furnace
 void AddSC_boss_blood_guard_porung();
 void AddSC_boss_kelidan_the_breaker();
 void AddSC_boss_the_maker();
 void AddSC_instance_blood_furnace();
-void AddSC_boss_magtheridon();               //HC Magtheridon's Lair
+//void AddSC_boss_magtheridon();               //HC Magtheridon's Lair
 void AddSC_instance_magtheridons_lair();
 void AddSC_boss_grand_warlock_nethekurse();  //HC Shattered Halls
 void AddSC_boss_warbringer_omrogg();
@@ -366,9 +366,9 @@ void AddSC_instance_arcatraz();
 void AddSC_boss_high_botanist_freywinn();    //TK Botanica
 void AddSC_boss_laj();
 void AddSC_boss_warp_splinter();
-void AddSC_boss_alar();                      //TK The Eye
-void AddSC_boss_kaelthas();
-void AddSC_boss_void_reaver();
+//void AddSC_boss_alar();                      //TK The Eye
+//void AddSC_boss_kaelthas();
+//void AddSC_boss_void_reaver();
 void AddSC_boss_high_astromancer_solarian();
 void AddSC_instance_the_eye();
 void AddSC_the_eye();
