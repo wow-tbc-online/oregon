@@ -774,7 +774,7 @@ void AddScripts()
   //  AddSC_boss_alar();                      //TK The Eye
    // AddSC_boss_kaelthas();
    // AddSC_boss_void_reaver();
-    AddSC_boss_high_astromancer_solarian();
+   // AddSC_boss_high_astromancer_solarian();
     AddSC_instance_the_eye();
     AddSC_the_eye();
     AddSC_boss_gatewatcher_iron_hand();     //TK The Mechanar
