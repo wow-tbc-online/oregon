@@ -134,9 +134,9 @@ void AddSC_boss_herod();
 void AddSC_boss_high_inquisitor_fairbanks();
 void AddSC_boss_houndmaster_loksey();
 void AddSC_boss_interrogator_vishas();
-void AddSC_boss_scorn();
+void AddSC_boss_scorn();*/
 void AddSC_instance_scarlet_monastery();
-void AddSC_boss_mograine_and_whitemane();
+/*void AddSC_boss_mograine_and_whitemane();
 void AddSC_boss_darkmaster_gandling();       //Scholomance
 void AddSC_boss_death_knight_darkreaver();
 void AddSC_boss_theolenkrastinov();
@@ -666,7 +666,7 @@ void AddScripts()
     AddSC_boss_noxxion();
     AddSC_boss_ptheradras();
     AddSC_boss_onyxia();    */                 //Onyxia's Lair
-    AddSC_boss_amnennar_the_coldbringer();  //Razorfen Downs
+   // AddSC_boss_amnennar_the_coldbringer();  //Razorfen Downs
     AddSC_razorfen_downs();
     AddSC_instance_razorfen_downs();
     AddSC_razorfen_kraul();                 //Razorfen Kraul
