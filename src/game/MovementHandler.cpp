@@ -15,6 +15,7 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+# include " AnticheatMgr.h"
 #include "Common.h"
 #include "WorldPacket.h"
 #include "WorldSession.h"
@@ -344,6 +345,11 @@ void WorldSession::HandleMovementOpcodes(WorldPacket& recv_data)
     uint32 mstime = getMSTime();
     if (m_clientTimeDelay == 0)
         m_clientTimeDelay = mstime - movementInfo.time;
+	
+	if (plMover)
+		{
+        sAnticheatMgr- > > StartHackDetection(plMover, movementInfo, opcode);
+  	    }
 
     if (plMover) // Hook for OnPlayerMove
         sScriptMgr.OnPlayerMove(plMover, movementInfo, opcode);

@@ -51,9 +51,14 @@ struct Position
     float m_positionY;
     float m_positionZ;
     // Better to limit access to _orientation field, to guarantee the value is normalized
-private:
-    float m_orientation;
+	
+ // mark, move to public for anticheat
+	float m_orientation;
 
+private:
+    //float m_orientation;
+
+public:	
 public:
     bool operator==(Position const &a);
 

@@ -1,0 +1,10 @@
+REPLACE INTO `warden_data_result` VALUES ('1001', '243', , '8979979', '5', 'E04D62503F', 'Hyper speed emuhack + maelstrom');
+REPLACE INTO `warden_data_result` VALUES ('1000', '243', , '48403522', '558B', 'lua protection');
+REPLACE INTO `warden_data_result` VALUES ('1005', '243', , '8103107', '3', '894E3C', 'no fall dmg maelstrom + emuhack');
+REPLACE INTO `warden_data_result` VALUES ('1008', '243', , '8095957', '3', '894808 ', 'emuhack teleport to plane');
+REPLACE INTO `warden_data_result` VALUES ('1007', '243', , '8095954', '3', '8B4908 ', 'maelstrom teleport to plane');
+REPLACE INTO `warden_data_result` VALUES ('1006', '243', , '65184442', 'DECA', 'maelstrom wallclimb1');
+REPLACE INTO `warden_data_result` VALUES ('1010', '243', , '92087284', 'BB8D243F', 'emuhack wallclimb');
+REPLACE INTO `warden_data_result` VALUES ('1004', '243', , '8095301', '2', '7513', '');
+REPLACE INTO `warden_data_result` VALUES ('1003', '243', , '8100062', '2', '7541', 'air jump emuhack');
+REPLACE INTO `warden_data_result` VALUES ('1002', '243', , '9208923', '3', 'C0854A', 'gravity emuhack + maelstrom');
