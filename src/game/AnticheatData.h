@@ -1,9 +1,9 @@
 #ifndef SC_ACDATA_H
-# define SC_ACDATA_H
+#define SC_ACDATA_H
 
-# include " AnticheatMgr.h"
+#include "AnticheatMgr.h"
 
-# define MAX_REPORT_TYPES 6
+#define MAX_REPORT_TYPES 6
 
 class AnticheatData
 {
