@@ -22,9 +22,9 @@
 #include "Timer.h"
 #include "Policies/Singleton.h"
 #include "SharedDefines.h"
-#include "ace/Atomic_Op.h"
 #include "QueryResult.h"
 
+#include <atomic>
 #include <map>
 #include <set>
 #include <list>
@@ -259,13 +259,6 @@ enum WorldConfigs
     CONFIG_WARDEN_NUM_CHECKS,
     CONFIG_WARDEN_CLIENT_CHECK_HOLDOFF,
     CONFIG_WARDEN_CLIENT_RESPONSE_DELAY,
-	CONFIG_ANTICHEAT_ENABLE,
-    CONFIG_ANTICHEAT_REPORTS_INGAME_NOTIFICATION,
-    CONFIG_ANTICHEAT_MAX_REPORTS_FOR_DAILY_REPORT,
-    CONFIG_ANTICHEAT_DETECTIONS_ENABLED,
-    CONFIG_ANTICHEAT_KICK_ENABLE,
-    CONFIG_ANTICHEAT_BAN_ENABLE,
-    //CONFIG_ANTICHEAT_BAN_TIME,
     CONFIG_RAF_LEVEL_LIMIT,
     CONFIG_MAX_RESULTS_LOOKUP_COMMANDS,
     CONFIG_BOOL_MMAP_ENABLED,
@@ -818,8 +811,7 @@ class World
         uint32 m_ShutdownTimer;
         uint32 m_ShutdownMask;
 
-        //atomic op counter for active scripts amount
-        ACE_Atomic_Op<ACE_Thread_Mutex, long> m_scheduledScripts;
+        std::atomic_long m_scheduledScripts;
 
         time_t m_startTime;
         time_t m_gameTime;
