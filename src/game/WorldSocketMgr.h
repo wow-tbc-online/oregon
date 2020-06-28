@@ -18,11 +18,9 @@
 #ifndef __WORLDSOCKETMGR_H
 #define __WORLDSOCKETMGR_H
 
-
+#include <ace/Basic_Types.h>
 #include <ace/Singleton.h>
 #include <ace/Thread_Mutex.h>
-
-#include "Platform/Define.h"
 
 class WorldSocket;
 class ReactorRunnable;
@@ -36,7 +34,7 @@ class WorldSocketMgr
         friend class ACE_Singleton<WorldSocketMgr, ACE_Thread_Mutex>;
 
         // Start network, listen at address:port .
-        int StartNetwork (uint16 port, const char* address);
+        int StartNetwork (ACE_UINT16 port, const char* address);
 
         // Stops all network threads, It will wait for all running threads .
         void StopNetwork();
@@ -50,7 +48,7 @@ class WorldSocketMgr
     private:
         int OnSocketOpen(WorldSocket* sock);
 
-        int StartReactiveIO(uint16 port, const char* address);
+        int StartReactiveIO(ACE_UINT16 port, const char* address);
 
     private:
         WorldSocketMgr();

@@ -24,12 +24,12 @@
 #include <ace/TP_Reactor.h>
 #include <ace/Dev_Poll_Reactor.h>
 #include <ace/Guard_T.h>
+#include <ace/Atomic_Op.h>
 #include <ace/os_include/arpa/os_inet.h>
 #include <ace/os_include/netinet/os_tcp.h>
 #include <ace/os_include/sys/os_types.h>
 #include <ace/os_include/sys/os_socket.h>
 
-#include <atomic>
 #include <set>
 
 #include "Log.h"
@@ -99,7 +99,7 @@ class ReactorRunnable : protected ACE_Task_Base
 
         long Connections()
         {
-            return m_Connections;
+            return static_cast<long> (m_Connections.value());
         }
 
         int AddSocket (WorldSocket* sock)
@@ -189,10 +189,11 @@ class ReactorRunnable : protected ACE_Task_Base
         }
 
     private:
+        typedef ACE_Atomic_Op<ACE_SYNCH_MUTEX, long> AtomicInt;
         typedef std::set<WorldSocket*> SocketSet;
 
         ACE_Reactor* m_Reactor;
-        std::atomic_int m_Connections;
+        AtomicInt m_Connections;
         int m_ThreadId;
 
         SocketSet m_Sockets;
@@ -218,7 +219,7 @@ WorldSocketMgr::~WorldSocketMgr()
 }
 
 int
-WorldSocketMgr::StartReactiveIO (uint16 port, const char* address)
+WorldSocketMgr::StartReactiveIO (ACE_UINT16 port, const char* address)
 {
     m_UseNoDelay = sConfig.GetBoolDefault ("Network.TcpNodelay", true);
 
@@ -265,7 +266,7 @@ WorldSocketMgr::StartReactiveIO (uint16 port, const char* address)
 }
 
 int
-WorldSocketMgr::StartNetwork (uint16 port, const char* address)
+WorldSocketMgr::StartNetwork (ACE_UINT16 port, const char* address)
 {
     if (!sLog.IsOutDebug())
         ACE_Log_Msg::instance()->priority_mask (LM_ERROR, ACE_Log_Msg::PROCESS);

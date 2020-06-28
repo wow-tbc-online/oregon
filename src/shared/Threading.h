@@ -21,8 +21,7 @@
 #include <set>
 #include <ace/Thread.h>
 #include <ace/TSS_T.h>
-
-#include <atomic>
+#include "ace/Atomic_Op.h"
 #include <assert.h>
 
 namespace ACE_Based
@@ -44,7 +43,7 @@ class Runnable
                 delete this;
         }
     private:
-        std::atomic_long m_refs;
+        ACE_Atomic_Op<ACE_Thread_Mutex, long> m_refs;
 };
 
 enum Priority
