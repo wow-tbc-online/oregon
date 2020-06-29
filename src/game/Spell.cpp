@@ -3807,9 +3807,9 @@ SpellCastResult Spell::CheckCast(bool strict)
                 return SPELL_FAILED_DONT_REPORT;
 			
 			//  Dont allow Stealth or Invisibility to be casted while the target is Flared
-    if (m_spellInfo->Id= = 1784  || m_spellInfo->Id= = 66
- || (m_spellInfo->SpellFamilyName == SPELLFAMILY_ROGUE && m_spellInfo->SpellIconID= = 250)
- || (m_spellInfo->SpellFamilyName == SPELLFAMILY_DRUID && m_spellInfo->SpellIconID= = 103))
+    if (m_spellInfo->Id== 1784  || m_spellInfo->Id== 66
+ || (m_spellInfo->SpellFamilyName == SPELLFAMILY_ROGUE && m_spellInfo->SpellIconID== 250)
+ || (m_spellInfo->SpellFamilyName == SPELLFAMILY_DRUID && m_spellInfo->SpellIconID== 103))
         if (Player* playerCaster = m_caster->ToPlayer())
             if (playerCaster->HasAura(1543))
                 return SPELL_FAILED_CASTER_AURASTATE;
