@@ -14644,7 +14644,7 @@ bool Player::LoadFromDB(uint32 guid, SqlQueryHolder* holder)
     SetUInt32Value(UNIT_FIELD_LEVEL, fields[7].GetUInt8());
     SetUInt32Value(PLAYER_XP, fields[8].GetUInt32());
 
-    uint32 money = fields[9].GetUInt32();
+    uint64 money = fields[9].GetUInt32();
     if (money > MAX_MONEY_AMOUNT)
         money = MAX_MONEY_AMOUNT;
     SetMoney(money);
