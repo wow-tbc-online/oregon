@@ -1561,9 +1561,9 @@ class Player : public Unit, public GridObject<Player>
         void ModifyMoney(int32 d)
         {
             if (d < 0)
-                SetMoney (GetMoney() > uint64(-d) ? GetMoney() + d : 0);
+                SetMoney (GetMoney() > uint32(-d) ? GetMoney() + d : 0);
             else
-                SetMoney (GetMoney() < uint64(MAX_MONEY_AMOUNT - d) ? GetMoney() + d : MAX_MONEY_AMOUNT);
+                SetMoney (GetMoney() < uint32(MAX_MONEY_AMOUNT - d) ? GetMoney() + d : MAX_MONEY_AMOUNT);
 
             // "At Gold Limit"
             if (GetMoney() >= MAX_MONEY_AMOUNT)
