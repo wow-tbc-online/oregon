@@ -48,11 +48,11 @@ void AnticheatMgr::WalkOnWaterHackDetection(Player* player, MovementInfo movemen
         return;
 
     uint32 key = player->GetGUIDLow();
-    if (!m_Players[key].GetLastMovementInfo().HasMovementFlag(MOVEMENTFLAG_WATERWALKING))
+    if (!m_Players[key].GetLastMovementInfo().HasMovementFlag(MOVEFLAG_WATERWALKING))
         return;
 
     // if we are a ghost we can walk on water
-    if (!player->IsAlive())
+    if (!player->isAlive())
         return;
 
     if (player->HasAuraType(SPELL_AURA_FEATHER_FALL) ||
@@ -71,7 +71,7 @@ void AnticheatMgr::FlyHackDetection(Player* player, MovementInfo movementInfo)
         return;
 
     uint32 key = player->GetGUIDLow();
-    if (!m_Players[key].GetLastMovementInfo().HasMovementFlag(MOVEMENTFLAG_FLYING2))
+    if (!m_Players[key].GetLastMovementInfo().HasMovementFlag(MOVEFLAG_FLYING2))
         return;
 
     if (player->HasAuraType(SPELL_AURA_FLY) ||
@@ -94,7 +94,7 @@ void AnticheatMgr::TeleportPlaneHackDetection(Player* player, MovementInfo movem
         movementInfo.pos.GetPositionZ() != 0)
         return;
 
-    if (movementInfo.HasMovementFlag(MOVEMENTFLAG_FALLING))
+    if (movementInfo.HasMovementFlag(MOVEFLAG_FALLING))
         return;
     
     //DEAD_FALLING was deprecated
@@ -118,12 +118,12 @@ void AnticheatMgr::StartHackDetection(Player* player, MovementInfo movementInfo,
     if (!sWorld.getConfig(CONFIG_ANTICHEAT_ENABLE))
         return;
 
-    if (player->IsGameMaster())
+    if (player->isGameMaster())
         return;
 
     uint32 key = player->GetGUIDLow();
 
-    if (player->IsInFlight() || player->GetTransport())
+    if (player->isInFlight() || player->GetTransport())
     {
         m_Players[key].SetLastMovementInfo(movementInfo);
         m_Players[key].SetLastOpcode(opcode);
@@ -183,7 +183,7 @@ void AnticheatMgr::SpeedHackDetection(Player* player,MovementInfo movementInfo)
     // We also must check the map because the movementFlag can be modified by the client.
     // If we just check the flag, they could always add that flag and always skip the speed hacking detection.
     // 369 == DEEPRUN TRAM
-    if (m_Players[key].GetLastMovementInfo().HasMovementFlag(MOVEMENTFLAG_ONTRANSPORT) && player->GetMapId() == 369)
+    if (m_Players[key].GetLastMovementInfo().HasMovementFlag(MOVEFLAG_ONTRANSPORT) && player->GetMapId() == 369)
         return;
 
     uint32 distance2D = (uint32)movementInfo.pos.GetExactDist2d(&m_Players[key].GetLastMovementInfo().pos);
@@ -191,11 +191,11 @@ void AnticheatMgr::SpeedHackDetection(Player* player,MovementInfo movementInfo)
 
     // we need to know HOW is the player moving
     // TO-DO: Should we check the incoming movement flags?
-    if (player->HasUnitMovementFlag(MOVEMENTFLAG_SWIMMING))
+    if (player->HasUnitMovementFlag(MOVEFLAG_SWIMMING))
         moveType = MOVE_SWIM;
     else if (player->IsFlying())
         moveType = MOVE_FLIGHT;
-    else if (player->HasUnitMovementFlag(MOVEMENTFLAG_WALK_MODE))
+    else if (player->HasUnitMovementFlag(MOVEFLAG_WALK_MODE))
         moveType = MOVE_WALK;
     else
         moveType = MOVE_RUN;
@@ -221,14 +221,14 @@ void AnticheatMgr::SpeedHackDetection(Player* player,MovementInfo movementInfo)
 
 	UnitMoveType move_type;
 
-            if (movementInfo.HasMovementFlag(MOVEMENTFLAG_FLYING))
-                move_type = movementInfo.HasMovementFlag(MOVEMENTFLAG_BACKWARD) ? MOVE_FLIGHT_BACK : MOVE_FLIGHT;
-            else if (movementInfo.HasMovementFlag(MOVEMENTFLAG_SWIMMING))
-                move_type = movementInfo.HasMovementFlag(MOVEMENTFLAG_BACKWARD) ? MOVE_SWIM_BACK : MOVE_SWIM;
-            else if (movementInfo.HasMovementFlag(MOVEMENTFLAG_WALK_MODE))
+            if (movementInfo.HasMovementFlag(MOVEFLAG_FLYING))
+                move_type = movementInfo.HasMovementFlag(MOVEFLAG_BACKWARD) ? MOVE_FLIGHT_BACK : MOVE_FLIGHT;
+            else if (movementInfo.HasMovementFlag(MOVEFLAG_SWIMMING))
+                move_type = movementInfo.HasMovementFlag(MOVEFLAG_BACKWARD) ? MOVE_SWIM_BACK : MOVE_SWIM;
+            else if (movementInfo.HasMovementFlag(MOVEFLAG_WALK_MODE))
                 move_type = MOVE_WALK;
             else    //hmm... in first time after login player has MOVE_SWIMBACK instead MOVE_WALKBACK
-                move_type = movementInfo.HasMovementFlag(MOVEMENTFLAG_BACKWARD) ? MOVE_SWIM_BACK : MOVE_RUN;
+                move_type = movementInfo.HasMovementFlag(MOVEFLAG_BACKWARD) ? MOVE_SWIM_BACK : MOVE_RUN;
 
 
 		float allowed_delta = player->GetSpeed(move_type);
