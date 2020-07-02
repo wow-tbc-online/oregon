@@ -33,7 +33,6 @@
 #include "Language.h"
 #include "World.h"
 #include "DisableMgr.h"
-#include "ScriptMgr.h"
 
 void WorldSession::HandleBattlegroundHelloOpcode(WorldPacket& recv_data)
 {
@@ -433,9 +432,23 @@ void WorldSession::HandleBattlegroundPlayerPortOpcode(WorldPacket& recv_data)
         if (pitr != sBattlegroundMgr.m_BattlegroundQueues[bgQueueTypeId].m_QueuedPlayers[_player->GetBattlegroundQueueIdFromLevel()].end()
             && pitr->second.GroupInfo)
         {
+            if (sWorld.getConfig(CONFIG_CROSSFACTION_BG_ENABLE) && !bg->isArena())
+            {
+                uint32 allycount = bg->GetPlayersCountByTeam(ALLIANCE);
+                uint32 hordecount = bg->GetPlayersCountByTeam(HORDE);
 
-            team = pitr->second.GroupInfo->Team;
-            sScriptMgr.OnBGAssignTeam(_player, bg, team);
+                if (allycount == hordecount)
+                {
+                    if (roll_chance_i(50))
+                        team = urand(ALLIANCE, HORDE);
+                }
+                else  if (allycount < hordecount)
+                    team = ALLIANCE;
+                else
+                    team = HORDE;
+            }
+            else
+                team = pitr->second.GroupInfo->Team;
             arenatype = pitr->second.GroupInfo->ArenaType;
             israted = pitr->second.GroupInfo->IsRated;
             rating = pitr->second.GroupInfo->ArenaTeamRating;

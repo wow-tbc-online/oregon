@@ -65,6 +65,7 @@
 #include "ConditionMgr.h"
 #include "ScriptMgr.h"
 #include "PoolMgr.h"
+#include "../Custom/CrossfactionBG/CrossfactionBG.h"
 
 #include <cmath>
 
@@ -948,7 +949,8 @@ bool Player::Create(uint32 guidlow, const std::string& name, uint8 race, uint8 c
         }
     }
     // all item positions resolved
-    sScriptMgr.OnPlayerCreate(this);
+
+    sCrossFaction.SetFakeValues(this);
 
     return true;
 }
@@ -14670,7 +14672,7 @@ bool Player::LoadFromDB(uint32 guid, SqlQueryHolder* holder)
     //Other way is to saves m_team into characters table.
     setFactionForRace(getRace());
 
-    sScriptMgr.OnPlayerLoadFromDB(this);
+    sCrossFaction.SetFakeValues(this);
 
     // load home bind and check in same time class/race pair, it used later for restore broken positions
     if (!_LoadHomeBind(holder->GetResult(PLAYER_LOGIN_QUERY_LOADHOMEBIND)))
