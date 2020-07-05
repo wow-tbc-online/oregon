@@ -1,4 +1,4 @@
-/*
+/* Version for tbc online
  * This file is part of the OregonCore Project. See AUTHORS file for Copyright information
  *
  * This program is free software; you can redistribute it and/or modify it
